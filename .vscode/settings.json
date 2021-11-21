@@ -1,6 +1,5 @@
 {
   "editor.tabSize": 2,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "cSpell.enabled": false,
-  "editor.fontFamily": "IBM Plex Mono"
+  "cSpell.enabled": false
 }
