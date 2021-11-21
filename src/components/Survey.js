@@ -52,32 +52,26 @@ const Survey = () => {
       <div className="container">
         <Title title="survey"></Title>
         <h3>most important room in the house?</h3>
-        {loading ? (
-          <h3>loading...</h3>
-        ) : (
-          <ul>
-            {items.map(item => {
-              const {
-                id,
-                fields: { name, votes },
-              } = item
-              return (
-                <li key={id}>
-                  <div className="key">
-                    {name.toUpperCase().substring(0, 2)}
-                  </div>
-                  <div>
-                    <h4>{name}</h4>
-                    <p>{votes} votes</p>
-                  </div>
-                  <button onClick={() => giveVote(id)}>
-                    <FaVoteYea />
-                  </button>
-                </li>
-              )
-            })}
-          </ul>
-        )}
+        <ul>
+          {items.map(item => {
+            const {
+              id,
+              fields: { name, votes },
+            } = item
+            return (
+              <li key={id}>
+                <div className="key">{name.toUpperCase().substring(0, 2)}</div>
+                <div>
+                  <h4>{name}</h4>
+                  <p>{votes} votes</p>
+                </div>
+                <button disabled={loading} onClick={() => giveVote(id)}>
+                  <FaVoteYea />
+                </button>
+              </li>
+            )
+          })}
+        </ul>
       </div>
     </Wrapper>
   )
