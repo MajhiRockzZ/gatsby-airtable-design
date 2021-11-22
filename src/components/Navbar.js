@@ -5,17 +5,22 @@ import { GoThreeBars } from 'react-icons/go'
 import { Link } from 'gatsby'
 import NavLink from './NavLink'
 import { GatsbyContext } from '../context/context'
+
 const Navbar = () => {
+  const { isSidebarOpen, toggleSidebar } = useContext(GatsbyContext)
+
   return (
     <Wrapper>
       <div className="nav-center">
         <div className="nav-header">
           <Link to="/">
             <img src={logo} alt="design" />
-            <button className="toggle-btn">
+          </Link>
+          {!isSidebarOpen && (
+            <button className="toggle-btn" onClick={toggleSidebar}>
               <GoThreeBars />
             </button>
-          </Link>
+          )}
         </div>
         <ul className="nav-links">
           <li>
