@@ -17,10 +17,10 @@ const searchClient = algoliasearch(
 
 const NewHits = connectHits(({ hits }) => {
   return hits.map(item => {
-    const { objectId, image, name } = item
+    const { objectID, image, name } = item
 
     return (
-      <article key={objectId}>
+      <article key={objectID}>
         <GatsbyImage image={image} className="img" alt={name} />
         <h4>{name}</h4>
       </article>
